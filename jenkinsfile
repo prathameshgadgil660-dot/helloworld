@@ -2,14 +2,18 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('clone') {
             steps {
                 echo 'Hello World'
             }
         }
-         stage('greet') {
+         stage('compile') {
             steps {
-                echo 'welcome sir'
+                bat 'javac helloworld.java'
+            }
+            stage('run') {
+            steps {
+                bat 'java helloworld'
             }
         }
     }
