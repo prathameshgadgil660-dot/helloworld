@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('clone') {
             steps {
-                echo 'Hello World'
+               git branch: 'main', credentialsId: 'c16586ce-a7f8-47c6-a84b-481e578c632e', url: 'https://github.com/prathameshgadgil660-dot/helloworld.git'
             }
         }
          stage('compile') {
